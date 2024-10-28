@@ -2,7 +2,7 @@ const { EMPLOYEE } = require("../models/employee.route");
 
 const addEmployee = async (req, res) => {
   let { firstName, lastName, email, department, salary } = req.body;
-  let { _id } = req.user;
+  let { userId } = req.user;
   try {
     const employee = await EMPLOYEE.create({
       firstName,
@@ -10,7 +10,7 @@ const addEmployee = async (req, res) => {
       email,
       department,
       salary,
-      userId: _id,
+      userId: userId,
     });
     return res
       .status(201)

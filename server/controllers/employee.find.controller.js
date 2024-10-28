@@ -1,9 +1,9 @@
 const { EMPLOYEE } = require("../models/employee.route");
 
 const getEmployee = async (req, res) => {
-  const { _id } = req.user;
+  const { userId } = req.user;
   try {
-    const employee = await EMPLOYEE.findById({ userId: _id });
+    const employee = await EMPLOYEE.find({ userId: userId });
     if (!employee) {
       return res.status(404).json({ message: "Employee not found" });
     }
