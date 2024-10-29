@@ -67,7 +67,6 @@ const LoginSignupForm = () => {
         });
     } catch (error) {
       console.error("Signup failed:", error);
-      setError("Signup failed. Please try again.");
     }
   };
 
